@@ -1,0 +1,341 @@
+.app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.anime-image {
+    max-width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: block;
+    object-fit: cover;
+    border: 5px solid #ff6b6b;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.anime-image:hover {
+    transform: scale(1.05);
+}
+
+.pizza-form {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ingredient-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.ingredient-checkbox.special-ingredient {
+    background-color: #fff3e0;
+    border: 1px solid #ffb74d;
+}
+
+.ingredient-checkbox input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.ingredient-emoji {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.pizza-preview {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pizza-base {
+    width: 300px;
+    height: 300px;
+    background: #ffd700;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
+    border: 15px solid #d4a017;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pizza-toppings {
+    width: 90%;
+    height: 90%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.topping {
+    font-size: 2em;
+    margin: 5px;
+    animation: float 3s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.special-pizza {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.special-pizza .topping {
+    font-size: 4em;
+    margin: 10px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+.order-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #ff5252;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.easter-egg-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.easter-egg-button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.easter-egg-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.gay-mode {
+    position: relative;
+}
+
+.gay-mode::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        to bottom,
+        #ff0018,
+        #ffa52c,
+        #ffff41,
+        #008018,
+        #0000f9,
+        #86007d
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    z-index: 1;
+}
+
+.gay-mode::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    z-index: 0;
+}
+
+.gay-mode-active {
+    background: linear-gradient(135deg, 
+        rgba(255,0,24,0.1),
+        rgba(255,165,44,0.1),
+        rgba(255,255,65,0.1),
+        rgba(0,128,24,0.1),
+        rgba(0,0,249,0.1),
+        rgba(134,0,125,0.1)
+    );
+}
+
+.gay-mode-active .pizza-form {
+    background: white;
+    border: 3px solid;
+    animation: rainbow-border 2s linear infinite;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.gay-mode-active label,
+.gay-mode-active h1,
+.gay-mode-active h2,
+.gay-mode-active h3,
+.gay-mode-active p,
+.gay-mode-active select,
+.gay-mode-active option {
+    color: #333;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+}
+
+.gay-mode-active .order-button {
+    background: linear-gradient(
+        45deg,
+        #ff0018,
+        #ffa52c,
+        #ffff41,
+        #008018,
+        #0000f9,
+        #86007d
+    );
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.gay-mode-active .order-button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.gay-mode-text {
+    background: linear-gradient(
+        45deg,
+        #ff0018,
+        #ffa52c,
+        #ffff41,
+        #008018,
+        #0000f9,
+        #86007d
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    text-shadow: none;
+    position: relative;
+    display: inline-block;
+}
+
+.gay-mode-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #333;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: rainbow-border 2s linear infinite;
+    border: 3px solid;
+}
+
+@keyframes rainbow-border {
+    0% { border-color: red; }
+    17% { border-color: orange; }
+    33% { border-color: yellow; }
+    50% { border-color: green; }
+    67% { border-color: blue; }
+    83% { border-color: indigo; }
+    100% { border-color: violet; }
+} 
